@@ -24,7 +24,6 @@ export const Login = ({setUser}) => {
                 <input type={"password"} onChange={(e) => setLoginPassword(e.target.value)} placeholder="Password"/>
                 <button type="submit">Log In</button>
             </form>
-            <h3></h3>
         </div>
     );
 }

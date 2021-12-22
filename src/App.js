@@ -28,7 +28,6 @@ const App = () => {
         <button onClick={logOut}>Log Out</button>
       </div>
       }
-      <h2></h2>
     </div>
   );
 }

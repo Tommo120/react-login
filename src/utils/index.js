@@ -1,6 +1,6 @@
 export const registerUserRequest = async (userData, setter) => {
     try {
-        const response = await fetch("http://localhost:5000/user", {
+        const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
             method: "POST",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -19,7 +19,7 @@ export const registerUserRequest = async (userData, setter) => {
 export const loginUserRequest = async (userData, setter) => {
     try {
         console.log(userData);
-        const response = await fetch("http://localhost:5000/login", {
+        const response = await fetch("https://tomfox-react-login.herokuapp.com/login", {
             method: "POST",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -44,7 +44,7 @@ export const loginUserRequest = async (userData, setter) => {
 
 export const updatePasswordRequest = async (userData, setter) => {
     try {
-        const response = await fetch("http://localhost:5000/updatePassword", {
+        const response = await fetch("https://tomfox-react-login.herokuapp.com/updatePassword", {
             method: "PUT",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -66,14 +66,14 @@ export const updatePasswordRequest = async (userData, setter) => {
 
 export const deleteAccountRequest = async (userData, setter) => {
     try {
-        const response = await fetch("http://localhost:5000/user", {
+        const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
             method: "DELETE",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
                 username: userData.username
             })
         });
-        const data = await response.json();
+        // const data = await response.json();
         console.log(setter);
         if(response.status === 200) {
             console.log("Account successfully deleted");
