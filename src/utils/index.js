@@ -1,6 +1,7 @@
 export const registerUserRequest = async (userData, setter) => {
     try {
         const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
+            mode: "cors",
             method: "POST",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -20,6 +21,7 @@ export const loginUserRequest = async (userData, setter) => {
     try {
         console.log(userData);
         const response = await fetch("https://tomfox-react-login.herokuapp.com/login", {
+            mode: "cors",
             method: "POST",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -45,6 +47,7 @@ export const loginUserRequest = async (userData, setter) => {
 export const updatePasswordRequest = async (userData, setter) => {
     try {
         const response = await fetch("https://tomfox-react-login.herokuapp.com/updatePassword", {
+            mode: "cors",
             method: "PUT",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
@@ -67,6 +70,7 @@ export const updatePasswordRequest = async (userData, setter) => {
 export const deleteAccountRequest = async (userData, setter) => {
     try {
         const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
+            mode: "cors",
             method: "DELETE",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
