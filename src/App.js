@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Register } from './components/Register.js';
+import { Login } from './components/Login.js';
+import { ChangePassword } from './components/ChangePassword';
+import { DeleteAccount } from './components/DeleteAccount';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState();
+
+  const logOut = () => {
+    console.log('Logging out');
+    setUser(null);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{user ? `Welcome ${user}` : "Please register or sign in"}</h1>
+      {!user ?
+      <div>
+        <Register setUser={setUser}/>
+        <Login setUser={setUser}/>
+      </div>
+      :
+      <div>
+        <ChangePassword userData={user}/>
+        <DeleteAccount userData={user} setUser={setUser}/>
+        <button onClick={logOut}>Log Out</button>
+      </div>
+      }
+      <h2></h2>
     </div>
   );
 }
