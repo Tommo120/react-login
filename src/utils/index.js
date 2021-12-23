@@ -1,9 +1,7 @@
 export const registerUserRequest = async (userData, setter) => {
     try {
-        const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
+        const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
             method: "POST",
-            mode: "cors",
-            origin: "https://serene-mccarthy-223972.netlify.app/",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
                 username: userData.username,
@@ -21,10 +19,8 @@ export const registerUserRequest = async (userData, setter) => {
 export const loginUserRequest = async (userData, setter) => {
     try {
         console.log(userData);
-        const response = await fetch("https://tomfox-react-login.herokuapp.com/login", {
+        const response = await fetch(`${process.env.REACT_APP_REST_API}login`, {
             method: "POST",
-            mode: "cors",
-            origin: "https://serene-mccarthy-223972.netlify.app/",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
                 username: userData.username,
@@ -48,10 +44,8 @@ export const loginUserRequest = async (userData, setter) => {
 
 export const updatePasswordRequest = async (userData, setter) => {
     try {
-        const response = await fetch("https://tomfox-react-login.herokuapp.com/updatePassword", {
+        const response = await fetch(`${process.env.REACT_APP_REST_API}updatePassword`, {
             method: "PUT",
-            mode: "cors",
-            origin: "https://serene-mccarthy-223972.netlify.app/",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
                 username: userData.username,
@@ -72,10 +66,8 @@ export const updatePasswordRequest = async (userData, setter) => {
 
 export const deleteAccountRequest = async (userData, setter) => {
     try {
-        const response = await fetch("https://tomfox-react-login.herokuapp.com/user", {
+        const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
             method: "DELETE",
-            mode: "cors",
-            origin: "https://serene-mccarthy-223972.netlify.app/",
             headers: { "Content-Type" : "application/json" },
             body: JSON.stringify({
                 username: userData.username
